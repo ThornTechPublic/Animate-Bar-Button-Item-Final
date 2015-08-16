@@ -29,7 +29,7 @@ class ViewController: UIViewController {
             rightBarButton.customView!.transform = CGAffineTransformMakeScale(0, 0)
             
             // animate the button to normal size
-            UIView.animateWithDuration(2.0,
+            UIView.animateWithDuration(1.0,
                 delay: 0.5,
                 // between 0.0 and 1.0, this is the brakes applied to the bounciness
                 usingSpringWithDamping: 0.5,
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                 options: .CurveLinear,
                 animations: {
                     // restore the button to original size.
-                    // it may briefly grow past the original size,
+                    // it may briefly grow past normal size,
                     // depending on how high you set the spring velocity.
                     self.rightBarButton.customView!.transform = CGAffineTransformIdentity
                 },
@@ -47,12 +47,16 @@ class ViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        // thanks to didSet on IBOutlet, this viewDidLoad is pretty clean.
+    }
+    
     func tappedRightButton(){
         println("tapped right button")
         spinTheRightBarButton()
     }
 
-    // makes the right bar button "pop"
+    // spin the star when tapped
     func spinTheRightBarButton(){
         // wind the clock back
         rightBarButton.customView!.transform = CGAffineTransformMakeRotation(CGFloat(M_PI * 6/5))
