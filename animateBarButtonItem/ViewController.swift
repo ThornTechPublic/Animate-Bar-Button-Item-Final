@@ -46,10 +46,10 @@ class ViewController: UIViewController {
         // put the button in the right bar button item
         rightBarButton.customView = iconButton
         // stage the button to be microscopic
-        rightBarButton.customView!.transform = CGAffineTransformMakeScale(0, 0)
+        rightBarButton.customView!.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(CGFloat(M_PI)), CGAffineTransformMakeScale(0, 0))
         
         // animate the button to normal size
-        UIView.animateWithDuration(1.0,
+        UIView.animateWithDuration(2.0,
             delay: 0.5,
             // between 0.0 and 1.0, this is the brakes applied to the bounciness
             usingSpringWithDamping: 0.5,
