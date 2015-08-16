@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         // put the button in the right bar button item
         rightBarButton.customView = iconButton
         // stage the button to be microscopic
-        rightBarButton.customView!.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(CGFloat(M_PI)), CGAffineTransformMakeScale(0, 0))
+        rightBarButton.customView!.transform = CGAffineTransformMakeScale(0, 0)
         
         // animate the button to normal size
         UIView.animateWithDuration(2.0,
