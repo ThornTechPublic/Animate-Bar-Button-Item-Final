@@ -18,11 +18,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bar Button Animation" id="ove-7V-fNl">
-                        <barButtonItem key="rightBarButtonItem" image="star" id="gkH-TC-AUC">
-                            <connections>
-                                <action selector="starTapped:" destination="BYZ-38-t0r" id="yvL-tu-jcZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="star" id="gkH-TC-AUC"/>
                     </navigationItem>
                     <connections>
                         <outlet property="rightBarButton" destination="gkH-TC-AUC" id="Qrg-zm-rRS"/>
@@ -59,5 +55,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <color key="tintColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>
