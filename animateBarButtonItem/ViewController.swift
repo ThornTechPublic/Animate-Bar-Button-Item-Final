@@ -20,8 +20,7 @@ class ViewController: UIViewController {
             let iconButton = UIButton(frame: iconSize)
             // set the button image
             iconButton.setBackgroundImage(icon, forState: .Normal)
-            // custom view breaks the IBAction, so set the target manually
-            iconButton.addTarget(self, action: "tappedRightButton", forControlEvents: .TouchUpInside)
+
             // put the button in the right bar button item
             rightBarButton.customView = iconButton
             // This is to support the initial animation.
@@ -44,6 +43,10 @@ class ViewController: UIViewController {
                 },
                 completion: nil
             )
+            
+            // custom view breaks the IBAction, so set the target manually
+            iconButton.addTarget(self, action: "tappedRightButton", forControlEvents: .TouchUpInside)
+
         }
     }
     
@@ -61,9 +64,9 @@ class ViewController: UIViewController {
         // wind the clock back
         rightBarButton.customView!.transform = CGAffineTransformMakeRotation(CGFloat(M_PI * 6/5))
         // animate back to original position
-        UIView.animateWithDuration(1.0, animations: {
+        UIView.animateWithDuration(1.0) {
             self.rightBarButton.customView!.transform = CGAffineTransformIdentity
-        })
+        }
     }
     
 }
