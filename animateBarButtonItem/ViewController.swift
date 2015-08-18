@@ -51,16 +51,10 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        // thanks to didSet on IBOutlet, this viewDidLoad is pretty clean.
+        // thanks to didSet on IBOutlet, viewDidLoad is pretty clean.
     }
     
     func tappedRightButton(){
-        println("tapped right button")
-        spinTheRightBarButton()
-    }
-
-    // spin the star when tapped
-    func spinTheRightBarButton(){
         // wind the clock back
         rightBarButton.customView!.transform = CGAffineTransformMakeRotation(CGFloat(M_PI * 6/5))
         // animate back to original position
